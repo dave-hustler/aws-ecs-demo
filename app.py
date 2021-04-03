@@ -3,17 +3,17 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-from secrets_manager import get_secret
+# from secrets_manager import get_secret
 
 app = Flask(__name__)
-db_config = get_secret()
+# db_config = get_secret()
 
-app.config['SQLALCHEMY_DATABASE_URI'] = (
-    f'postgresql+psycopg2://{db_config["username"]}:' +
-    f'{db_config["password"]}@' +
-    f'{db_config["host"]}/' +
-    f'{db_config["db_name"]}'
-)
+# app.config['SQLALCHEMY_DATABASE_URI'] = (
+#     f'postgresql+psycopg2://{db_config["username"]}:' +
+#     f'{db_config["password"]}@' +
+#     f'{db_config["host"]}/' +
+#     f'{db_config["db_name"]}'
+# )
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
